@@ -42,7 +42,7 @@ class Images {
   static const String three_dot = 'assets/icon/three_dot.png';
 
   // for Icon
-  static const String logo = 'assets/image/logo.png';
+  static const String logo = 'assets/image/eatboxlogo.png';
   static const String marker = 'assets/icon/marker.png';
   static const String my_location = 'assets/icon/my_location.png';
   static const String search = 'assets/icon/search.png';

@@ -2,7 +2,7 @@ import 'package:flutter_restaurant/data/model/response/language_model.dart';
 import 'package:flutter_restaurant/utill/images.dart';
 
 class AppConstants {
-  static const String APP_NAME = 'eFood';
+  static const String APP_NAME = 'Eat My Box';
   static const String BASE_URL =  'https://food.onewebmart.in';
   static const String CATEGORY_URI = '/api/v1/categories';
   static const String BANNER_URI = '/api/v1/banners';
