@@ -22,6 +22,7 @@ import 'package:flutter_restaurant/view/base/no_data_screen.dart';
 import 'package:flutter_restaurant/view/screens/cart/widget/cart_product_widget.dart';
 import 'package:flutter_restaurant/view/screens/cart/widget/delivery_option_button.dart';
 import 'package:flutter_restaurant/view/base/web_app_bar.dart';
+import 'package:flutter_restaurant/view/screens/subscribe/subscribe.dart';
 import 'package:provider/provider.dart';
 
 class CartScreen extends StatelessWidget {
@@ -289,6 +290,22 @@ class CartScreen extends StatelessWidget {
                                               }
                                             }),
                                           ),
+                                          if(ResponsiveHelper.isDesktop(context)) Container(
+                                            width: 1170,
+                                            padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL),
+                                            child: CustomButton(
+                                              btnTxt: getTranslated('subscribe', context),
+                                              backgroundColor: Colors.green,
+                                              onTap: (){
+                                                Navigator.push(context, MaterialPageRoute(builder: (context){
+                                                  return SubscribeScreen();
+                                                }));
+                                              },
+
+
+                                            ),
+                                          )
+
 
                                         ]),
                                       ),
@@ -306,7 +323,7 @@ class CartScreen extends StatelessWidget {
                 ),
               ),
 
-             if(!ResponsiveHelper.isDesktop(context)) Container(
+              if(!ResponsiveHelper.isDesktop(context)) Container(
                 width: 1170,
                 padding: EdgeInsets.all(Dimensions.PADDING_SIZE_SMALL),
                 child: CustomButton(btnTxt: getTranslated('continue_checkout', context), onTap: () {
@@ -321,6 +338,37 @@ class CartScreen extends StatelessWidget {
                   }
                 }),
               ),
+              if(!ResponsiveHelper.isDesktop(context)) Container(
+                width: 1170,
+                padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL),
+                child: CustomButton(
+                  btnTxt: getTranslated('subscribe', context),
+                  backgroundColor: Colors.green,
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                      return SubscribeScreen();
+                    }));
+                  },
+
+
+                ),
+              )
+
+
+
+              // Container(
+              //   padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_SMALL),
+              //   width: 1170,
+              //   child: CustomButton(
+              //     btnTxt: 'Subscribe',
+              //     backgroundColor: Colors.green,
+              //     onTap: (){
+              //       Navigator.push(context, MaterialPageRoute(builder: (context){
+              //         return SubscribeScreen();
+              //       }));
+              //     },
+              //   ),
+              // )
 
             ],
           ) : NoDataScreen(isCart: true);
@@ -329,6 +377,7 @@ class CartScreen extends StatelessWidget {
     );
   }
 }
+
 class CartListWidget extends StatelessWidget {
   final CartProvider cart;
   final List<List<AddOns>> addOns;

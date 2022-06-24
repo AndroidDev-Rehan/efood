@@ -101,10 +101,10 @@ class _SplashScreenState extends State<SplashScreen> {
                 imageErrorBuilder: (c, o, s) => Image.asset(Images.placeholder_rectangle, height: 165),
               ) : Image.asset(Images.logo, height: 150),
               SizedBox(height: 30),
-              Text(
-                ResponsiveHelper.isWeb() ? splash.configModel.restaurantName : AppConstants.APP_NAME,
-                style: rubikBold.copyWith(color: Theme.of(context).primaryColor, fontSize: 30),
-              ),
+              // Text(
+              //   ResponsiveHelper.isWeb() ? splash.configModel.restaurantName : AppConstants.APP_NAME,
+              //   style: rubikBold.copyWith(color: Theme.of(context).primaryColor, fontSize: 30),
+              // ),
             ],
           );
         }),
